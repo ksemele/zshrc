@@ -1,3 +1,6 @@
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # Zsh completions
 # todo: need to refactor at next fresh install
 fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
@@ -44,6 +47,8 @@ set rtp+=/opt/homebrew/opt/fzf
 alias pc='pwd | pbcopy'
 alias c='pbcopy'
 alias hi='history -i'
+alias ll='ls -la'
+alias l='ls -lah'
 
 # nvim, IDE
 alias n=nvim
@@ -76,8 +81,8 @@ alias oto="ot output"
 alias h=helm
 export XDG_DATA_HOME=$HOME
 
-alias p=/opt/homebrew/bin/python3.12
-alias python3=python
+alias p=/opt/homebrew/bin/python3.13
+alias pip=pip3
 
 # private-repo
 #export GITHUB_USER=
@@ -94,7 +99,7 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 
 # Homebrew
-export PATH=/opt/homebrew/Cellar/go/1.23.2/bin:$PATH:/opt/homebrew/bin:$HOME/opt/sbin/zmap:/opt/homebrew/Cellar/zmap/3.0.0/sbin
+export PATH=/opt/homebrew/Cellar/go/1.23.2/bin:$PATH:/opt/homebrew/bin:$HOME/opt/sbin/zmap:/opt/homebrew/Cellar/zmap/3.0.0/sbin:/opt/homebrew/bin
 
 alias f=flux
 
@@ -105,14 +110,14 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 # ruby 
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+#export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
-export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+#export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+#export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.3
+#source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+#source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+#chruby ruby-3.1.3
 
 # Docker
 alias d=docker
