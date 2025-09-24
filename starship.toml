@@ -1,0 +1,68 @@
+# ~/.config/starship.toml
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+[directory]
+truncate_to_repo = false
+truncation_length = 3
+truncation_symbol = '…/'
+#fish_style_pwd_dir_length = 4
+
+[battery]
+full_symbol = '🔋🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '🪫 '
+[[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 10%
+threshold = 15
+style = 'bold red'
+discharging_symbol = '🪫 '
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
+threshold = 80
+style = 'bold yellow'
+discharging_symbol = '󱟞 '
+
+# ~/.config/starship.toml
+
+[sudo]
+style = 'bold green'
+symbol = '🔥 '
+disabled = false
+
+[kubernetes]
+disabled = false
+style = 'bold blue'
+symbol = '☸ '
+format = '[$symbol$context(:$namespace)]($style) '
+
+[aws]
+symbol = ' '
+format = '[$symbol$profile]($style) '
+style = 'bold 202'
+[aws.profile_aliases]
+Enterprise_Naming_Scheme-voidstars = 'void**'
+# when capacity is over 30%, the battery indicator will not be displayed
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[ruby]
+disabled = true
+
+[java]
+disabled = true
+
+[nodejs]
+disabled = true
+
