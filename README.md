@@ -12,6 +12,30 @@ source $HOME/.private.zshrc
 source $HOME/.project.zshrc
 ```
 
+```
+https://brew.sh
+brew install zsh
+sudo sh -c "echo $(which zsh) >> /etc/shells"
+chsh -s $(which zsh)
+
+https://starship.rs/installing/
+mkdir -p $HOME/.config && ln starship.toml $HOME/.config/starship.toml
+
+brew install zoxide
+
+brew install fzf
+To set up shell integration, see:
+  https://github.com/junegunn/fzf#setting-up-shell-integration
+To use fzf in Vim, add the following line to your .vimrc:
+  set rtp+=/opt/homebrew/opt/fzf
+
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+brew install kubectl
+brew install derailed/k9s/k9s
+
+```
+
 # todo
 - [x] init version
 - [ ] list of tools with links/commands

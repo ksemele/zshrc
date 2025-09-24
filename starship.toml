@@ -1,4 +1,4 @@
-# ~/.config/starship.toml
+# mkdir -p $HOME/.config && ln starship.toml $HOME/.config/starship.toml
 
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
