@@ -33,7 +33,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
 brew install kubectl
 brew install derailed/k9s/k9s
-
+brew install tree
 ```
 
 # todo
