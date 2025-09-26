@@ -7,6 +7,7 @@ fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 autoload -Uz compinit
 compinit
 zmodload zsh/complist
+setopt AUTO_CD
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
