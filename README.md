@@ -35,6 +35,11 @@ brew install kubectl
 brew install derailed/k9s/k9s
 brew install tree
 brew install skopeo
+# https://pipx.pypa.io/stable/installation
+brew install pipx
+pipx ensurepath
+sudo pipx ensurepath --global
+sudo pipx ensurepath --prepend
 ```
 
 # todo
