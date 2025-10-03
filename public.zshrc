@@ -174,6 +174,7 @@ gpa() {
   fi
 
   commit_message="$*"
+  commit_message=$(echo "$commit_message" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')
   git add . && git commit -am "$commit_message" && git push
 }
 
