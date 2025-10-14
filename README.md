@@ -40,6 +40,8 @@ brew install pipx
 pipx ensurepath
 sudo pipx ensurepath --global
 sudo pipx ensurepath --prepend
+brew install nvim
+brew install opentofu
 ```
 
 # todo
