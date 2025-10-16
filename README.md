@@ -42,6 +42,9 @@ sudo pipx ensurepath --global
 sudo pipx ensurepath --prepend
 brew install nvim
 brew install opentofu
+brew install glab
+op signin
+op plugin init glab
 ```
 
 # todo

@@ -272,3 +272,4 @@ export PATH=$PATH:/usr/local/opt/homebrew/bin
 # zoxide init
 eval "$(zoxide init zsh)"
 
+source ~/.config/op/plugins.sh
