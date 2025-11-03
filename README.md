@@ -33,6 +33,10 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
 brew install kubectl
 brew install derailed/k9s/k9s
+
+rm $HOME/k9s/config.yaml
+ln -s $HOME/zshrc/k9s_config.yaml $HOME/k9s/config.yaml
+
 brew install tree
 brew install skopeo
 # https://pipx.pypa.io/stable/installation
@@ -45,6 +49,9 @@ brew install opentofu
 brew install glab
 op signin
 op plugin init glab
+brew install kubectx
+brew install go
+brew install helm
 ```
 
 # todo

@@ -77,6 +77,7 @@ alias otp="otv; ot fmt; ot plan"
 alias ota="otv; ot fmt; ot apply"
 alias otd="ot destroy"
 alias oto="ot output"
+alias otfu="ot force-unlock -force"
 
 # helm
 alias h=helm
@@ -257,6 +258,9 @@ alias kns=kubens
 alias 9=k9s
 alias ka='k apply -f'
 alias kd='k delete -f'
+
+kn() {kubectl run akrugliak-netshoot --rm -i --tty --image nicolaka/netshoot -n $1}
+kbd() {kubectl debug node/$1 --image public.ecr.aws/bottlerocket/bottlerocket-admin:v0.12.4 --profile=general -it -- bash}
 
 # AWS
 #export AWS_PROFILE=
