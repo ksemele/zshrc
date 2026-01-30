@@ -1,12 +1,11 @@
 k9s:
   liveViewAutoRefresh: false
-  screenDumpDir: $HOME/k9s/screen-dumps
   refreshRate: 2
   maxConnRetry: 5
   readOnly: false
   noExitOnCtrlC: false
   ui:
-    enableMouse: false
+    enableMouse: true
     headless: true
     logoless: true
     crumbsless: false

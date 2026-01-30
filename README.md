@@ -52,6 +52,12 @@ op plugin init glab
 brew install kubectx
 brew install go
 brew install helm
+brew install fluxcd/tap/flux
+brew install direnv
+brew install yq
+brew install jq
+pipx install --include-deps ansible
+pipx upgrade --include-injected ansible
 ```
 
 # todo

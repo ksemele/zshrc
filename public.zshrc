@@ -18,6 +18,10 @@ plugins=(git)
 
 # ================= User configuration ===============
 
+# fix for clean installation
+bindkey "^[[1;3D" backward-word # cmd+left
+bindkey "^[[1;3C" forward-word # cmd+right
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -104,6 +108,13 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export PATH=/opt/homebrew/Cellar/go/1.23.2/bin:$PATH:/opt/homebrew/bin:$HOME/opt/sbin/zmap:/opt/homebrew/Cellar/zmap/3.0.0/sbin:/opt/homebrew/bin
 
 alias f=flux
+frk() {flux reconcile kustomization -n $1 $2}
+frh() {flux reconcile helmrelease -n $1 $2}
+
+fsk() {flux suspend kustomization -n $1 $2}
+fsrk() {flux resume kustomization -n $1 $2}
+fsh() {flux suspend helmrelease -n $1 $2}
+fsrh() {flux resume helmrelease -n $1 $2}
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
@@ -277,3 +288,29 @@ export PATH=$PATH:/usr/local/opt/homebrew/bin
 eval "$(zoxide init zsh)"
 
 source ~/.config/op/plugins.sh
+
+# https://github.com/direnv/direnv/blob/master/docs/hook.md
+eval "$(direnv hook zsh)"
+
+# certs
+kc() {
+  if [[ $# -lt 1 ]]; then
+    echo "Usage: ct <namespace> <secret_name>"
+    return 1
+  fi
+
+  namespace="$1"
+  secret="$2"
+  kubectl get secret -n $namespace $secret -o jsonpath='{.data.tls\.crt}' | base64 -d | openssl x509 -noout -text
+}
+
+kcd() {
+  if [[ $# -lt 1 ]]; then
+    echo "Usage: ct <namespace> <secret_name>"
+    return 1
+  fi
+
+  namespace="$1"
+  secret="$2"
+  kubectl get secret -n $namespace $secret -o jsonpath='{.data.tls\.crt}' | base64 -d | openssl x509 -noout -dates
+}
