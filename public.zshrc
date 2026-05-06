@@ -334,3 +334,4 @@ color() {
     esac
 }
 
+export PATH="/opt/homebrew/Cellar/node@22/22.22.2_2/bin:$PATH"
