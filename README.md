@@ -58,6 +58,7 @@ brew install yq
 brew install jq
 pipx install --include-deps ansible
 pipx upgrade --include-injected ansible
+brew install kind
 ```
 
 # todo

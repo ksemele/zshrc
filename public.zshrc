@@ -83,6 +83,9 @@ alias otd="ot destroy"
 alias oto="ot output"
 alias otfu="ot force-unlock -force"
 
+# localstack
+alias otl="TF_CMD=tofu tflocal"
+
 # helm
 alias h=helm
 export XDG_DATA_HOME=$HOME
@@ -177,6 +180,10 @@ alias gs="git status"
 alias gb="git checkout -b"
 alias gbl="git branch"
 alias gbc="git checkout"
+alias gl='git log --pretty=format:"%h %an <%ae> %s" --graph --all'
+
+# https://github.com/newren/git-filter-repo/tree/main
+alias gf='python3 ~/.local/bin/git-filter-repo'
 
 # git add && commit && push
 gpa() {
@@ -191,14 +198,19 @@ gpa() {
 }
 
 # git add tag
-gt() {
-  if [[ $# -ne 1 ]]; then
-    echo "Usage: gt <TAG_NAME>"
-    return 1
-  fi
-
-  git_tag=$1
-  git tag $git_tag; git push origin $git_tag
+gt () {
+    if [[ $# -lt 1 ]]; then
+        echo "Usage: gt <TAG_NAME> [changelog message]"
+        return 1
+    fi
+    local git_tag=$1
+    shift
+    if [[ $# -gt 0 ]]; then
+        git tag -a "$git_tag" -m "$*"
+    else
+        git tag -a "$git_tag" -m "$git_tag"
+    fi
+    git push origin "$git_tag"
 }
 
 # git delete tag
@@ -240,6 +252,7 @@ alias fingerprinton="grep -qxF 'auth sufficient pam_tid.so' /etc/pam.d/sudo || e
 # ma() { multipass stop $(multipass list --format yaml | yq eval 'keys | .[]' -) }
 
 alias vz="vim ~/.zshrc ; source ~/.zshrc"
+alias vzp="vim ~/.private.zshrc ; source ~/.zshrc"
 
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 export PATH="/opt/homebrew/Cellar/go/1.23.3/bin/:$PATH"
@@ -314,3 +327,8 @@ kcd() {
   secret="$2"
   kubectl get secret -n $namespace $secret -o jsonpath='{.data.tls\.crt}' | base64 -d | openssl x509 -noout -dates
 }
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
