@@ -332,3 +332,24 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+=======
+color() {
+    if [ $# -ne 2 ]; then
+        echo "color(): Usage: color <red|green|yellow> <text>"
+        return 1
+    fi
+
+    local reset="\033[0m"
+    local red="\033[91m"
+    local green="\033[92m"
+    local yellow="\033[93m"
+
+    case "$1" in
+        "red") echo -e "${red}$2${reset}";;
+        "green") echo -e "${green}$2${reset}";;
+        "yellow") echo -e "${yellow}$2${reset}";;
+        *) echo "color(): Invalid color. Options: red, green, yellow"; return 1;;
+    esac
+}
+
+export PATH="/opt/homebrew/Cellar/node@22/22.22.2_2/bin:$PATH"
