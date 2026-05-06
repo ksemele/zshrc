@@ -332,7 +332,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
-=======
 color() {
     if [ $# -ne 2 ]; then
         echo "color(): Usage: color <red|green|yellow> <text>"
