@@ -78,4 +78,9 @@ if [ -n "$week_pct" ]; then
   printf " %s7d:%s %s%%\033[0m" "$color" "$bar" "$val"
 fi
 
+total_tokens=$(echo "$input" | jq -r '.context_window.total_input_tokens // empty')
+if [ -n "$total_tokens" ]; then
+  printf " \033[90mtokens:%s\033[0m" "$total_tokens"
+fi
+
 echo ""
