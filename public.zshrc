@@ -1,5 +1,5 @@
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+command -v fzf >/dev/null 2>&1 && source <(fzf --zsh)
 
 # Zsh completions
 # todo: need to refactor at next fresh install
