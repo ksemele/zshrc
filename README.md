@@ -35,7 +35,6 @@ brew install kubectl
 brew install derailed/k9s/k9s
 
 rm $HOME/k9s/config.yaml
-ln -s $HOME/zshrc/k9s_config.yaml $HOME/k9s/config.yaml
 
 brew install tree
 brew install skopeo
