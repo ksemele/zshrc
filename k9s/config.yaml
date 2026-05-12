@@ -4,10 +4,6 @@ k9s:
   maxConnRetry: 5
   readOnly: false
   noExitOnCtrlC: false
-  #skin: dracula
-  #skin: nightfox
-  #skin: nord
-  skin: transparent
   ui:
     enableMouse: true
     headless: true
@@ -16,6 +12,10 @@ k9s:
     reactive: false
     noIcons: false
     defaultsToFullScreen: true
+    skin: transparent
+    #skin: dracula
+    #skin: nightfox
+    #skin: nord
   skipLatestRevCheck: false
   disablePodCounting: false
   shellPod:
