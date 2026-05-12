@@ -352,3 +352,10 @@ color() {
 }
 
 export PATH="/opt/homebrew/Cellar/node@22/22.22.2_2/bin:$PATH"
+
+# tf providers check
+tfvc() {
+  docker run --rm -it -v "$(pwd):/src" tfverch/tfvc /src "$@"
+}
+
+export K9S_CONFIG_DIR="$HOME/zshrc/k9s"
