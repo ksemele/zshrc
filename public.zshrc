@@ -109,7 +109,7 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # Homebrew
 export PATH=/opt/homebrew/Cellar/go/1.23.2/bin:$PATH:/opt/homebrew/bin:$HOME/opt/sbin/zmap:/opt/homebrew/Cellar/zmap/3.0.0/sbin:/opt/homebrew/bin
-alias bb="brew update -f && brew upgrade -f"
+alias bb="brew update -f && brew upgrade -fy"
 
 alias f=flux
 frk() {flux reconcile kustomization -n $1 $2}
@@ -361,3 +361,5 @@ tfvc() {
 
 export K9S_CONFIG_DIR="$HOME/zshrc/k9s"
 
+alias hostlist="cat $HOME/.ssh/config | grep 'Host ' | awk '{print $2}'"
+alias hl=hostlist
