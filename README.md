@@ -18,7 +18,8 @@ brew install zsh
 sudo sh -c "echo $(which zsh) >> /etc/shells"
 chsh -s $(which zsh)
 
-https://starship.rs/installing/
+# https://starship.rs/installing/
+brew install starship
 mkdir -p $HOME/.config && ln starship.toml $HOME/.config/starship.toml
 
 brew install zoxide
@@ -38,16 +39,26 @@ rm $HOME/k9s/config.yaml
 
 brew install tree
 brew install skopeo
+
 # https://pipx.pypa.io/stable/installation
 brew install pipx
 pipx ensurepath
 sudo pipx ensurepath --global
 sudo pipx ensurepath --prepend
+
 brew install nvim
 brew install opentofu
 brew install glab
+
+# https://www.1password.dev/cli/get-started
+brew install 1password-cli
+chmod 700 /Users/deadbob/.config/op
 op signin
 op plugin init glab
+# https://www.1password.dev/ssh/get-started#step-4-configure-your-ssh-or-git-client
+mkdir -p ~/.1password && ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ~/.1password/agent.sock
+# export SSH_AUTH_SOCK=~/.1password/agent.sock
+
 brew install kubectx
 brew install go
 brew install helm
@@ -58,6 +69,8 @@ brew install jq
 pipx install --include-deps ansible
 pipx upgrade --include-injected ansible
 brew install kind
+# https://ghostty.org/docs/install/binary#macos
+brew install --cask ghostty
 ```
 
 # todo
