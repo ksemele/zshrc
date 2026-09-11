@@ -73,6 +73,25 @@ brew install kind
 brew install --cask ghostty
 ```
 
+## Claude Code statusline
+
+`.claude/statusline-command.sh` renders context/5h/7d usage bars in the Claude Code
+statusline. It's not picked up automatically — after cloning this repo, wire it up:
+
+```sh
+chmod +x ~/zshrc/.claude/statusline-command.sh
+```
+
+Then add to `~/.claude/settings.json`:
+```json
+{
+  "statusLine": {
+    "type": "command",
+    "command": "~/zshrc/.claude/statusline-command.sh"
+  }
+}
+```
+
 # todo
 - [x] init version
 - [ ] list of tools with links/commands
