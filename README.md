@@ -73,6 +73,8 @@ brew install kind
 brew install --cask ghostty
 # https://github.com/caarlos0/svu
 brew install svu
+# https://mutagen.io/documentation/introduction/installation/
+brew install mutagen-io/mutagen/mutagen
 ```
 
 ## Claude Code statusline
