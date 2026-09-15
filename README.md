@@ -71,6 +71,8 @@ pipx upgrade --include-injected ansible
 brew install kind
 # https://ghostty.org/docs/install/binary#macos
 brew install --cask ghostty
+# https://github.com/caarlos0/svu
+brew install svu
 ```
 
 ## Claude Code statusline
