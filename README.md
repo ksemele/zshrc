@@ -75,6 +75,7 @@ brew install --cask ghostty
 brew install svu
 # https://mutagen.io/documentation/introduction/installation/
 brew install mutagen-io/mutagen/mutagen
+brew install Adembc/homebrew-tap/lazyssh
 ```
 
 ## Claude Code statusline
