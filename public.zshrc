@@ -363,3 +363,6 @@ export K9S_CONFIG_DIR="$HOME/zshrc/k9s"
 
 alias hostlist="cat $HOME/.ssh/config | grep 'Host ' | awk '{print $2}'"
 alias hl=hostlist
+
+# blackwall
+alias b=blackwall
