@@ -76,6 +76,7 @@ brew install svu
 # https://mutagen.io/documentation/introduction/installation/
 brew install mutagen-io/mutagen/mutagen
 brew install Adembc/homebrew-tap/lazyssh
+brew install uv
 ```
 
 ## Claude Code statusline
